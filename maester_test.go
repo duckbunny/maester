@@ -5,17 +5,7 @@
 
 package maester
 
-import (
-	"testing"
-
-	"github.com/duckbunny/service"
-)
-
-type Maester interface {
-	Set(string) ([]byte, error)
-	Get(string) ([]byte, error)
-	Init(*service.Service) error
-}
+import "testing"
 
 func TestInit(t *testing.T) {
 }

@@ -20,7 +20,7 @@ var MaesterTypes map[string]Maester = make(map[string]Maester)
 // Flags to be parsed for setting pool and declaration interfaces.
 var maester string
 
-var coreMaester *Maester
+var coreMaester Maester
 
 func init() {
 	flag.StringVar(&maester, "maester", os.Getenv("MAESTER"), "Maester to load config values.")
@@ -52,7 +52,7 @@ func Init() error {
 }
 
 // Get a foreign microservice definition.
-func Get(s string) error {
+func Get(s string) ([]byte, error) {
 	return coreMaester.Get(s)
 }
 
